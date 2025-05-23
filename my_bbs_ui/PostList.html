@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <script src="./lib/vue.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 </head>
 <body>
     <div id="postList">
@@ -14,14 +16,121 @@
                 <span>注册</span>
             </div>
         </div>
-        <div class="header2">aaaa</div>
+        <div class="plate-show">
+            <div class="navi"></div>
+            <div class="background">
+                <img src="./assets/images/main.jpeg" alt="" width="640" height="430">
+                <h2>《全面战争：三国》等你来战</h2>
+            </div>
+        </div>
+        <div class="send-post">
+            <el-button type="primary">发帖</el-button>
+        </div>
+        <div class="post-list">
+            <table>
+                <thead>
+                    <tr>
+                        <td colspan="2">
+                            <span>全部主题</span>
+                            <span>最新</span>
+                            <span>热门</span>
+                            <span>热帖</span>
+                            <span>精华</span>
+                        </td>
+                        <td>作者</td>
+                        <td>回复/查看</td>
+                        <td>最后发表</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="width: 32px;">
+                            <img src="./assets/images/folder.jpg" alt="">
+                        </td>
+                        <td><span><a class="post-type" href="javascript:;">[帖子种类]</a></span>
+                            <a href="./PostDetail.html">标题</a>
+                        </td>
+                        <td style="width: 135px;">
+                            <p>Chase </p>
+                            <p>20250523</p>
+                        </td>
+                        <td style="width: 66px;">
+                            <p>998</p>
+                            <p>111</p>
+                        </td>
+                        <td style="width: 120px;">
+                            <p>Alice</p>
+                            <p>20250523</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 32px;">
+                            <img src="./assets/images/folder.jpg" alt="">
+                        </td>
+                        <td><span>[帖子种类]</span>标题</td>
+                        <td style="width: 135px;">
+                            <p>Chase </p>
+                            <p>20250523</p>
+                        </td>
+                        <td style="width: 66px;">
+                            <p>998</p>
+                            <p>111</p>
+                        </td>
+                        <td style="width: 120px;">
+                            <p>Alice</p>
+                            <p>20250523</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 32px;">
+                            <img src="./assets/images/folder.jpg" alt="">
+                        </td>
+                        <td><span>[帖子种类]</span>标题</td>
+                        <td style="width: 135px;">
+                            <p>Chase </p>
+                            <p>20250523</p>
+                        </td>
+                        <td style="width: 66px;">
+                            <p>998</p>
+                            <p>111</p>
+                        </td>
+                        <td style="width: 120px;">
+                            <p>Alice</p>
+                            <p>20250523</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="post-page">
+            <el-pagination background layout="prev, pager, next":page-size=30 :total="1000">
+
+            </el-pagination>
+        </div>
     </div>
 </body>
+
+<script>
+    new Vue({
+        el: "#postList",
+    })
+</script>
+
 <style>
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+    }
+    a{
+        text-decoration: none;
+        color: #333;
+    }
+    a.post-type{
+        color: blue;
+    }
+    a:hover{
+        text-decoration: underline;
     }
     .header {
         width: 100%;
@@ -35,6 +144,57 @@
         color: #fff;
         padding-top: 5px;
     }
-    
+    .plate-show{
+        width: 98%;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+    }
+    .plate-show .background{
+        text-align: center;
+    }
+    .plate-show .navi {
+        height: 36px;
+    }
+    .plate-show .background h2 {
+        color: blue;
+        margin-top: 10px 0;
+    }
+    .sent-post{
+        width: 98%;
+        margin: auto;
+    }
+    .post-list{
+        width: 98%;
+        margin: 16px auto;
+        border: 1px solid #ccc;
+        border-bottom: 0 none;
+    }
+    .post-list table{
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 14px;
+    }
+    .post-list table thead tr td{
+        background-color: #eee;
+        height: 40px;
+    }
+    .post-list table thead tr td span{
+        margin-left: 16px;
+        color: blue;
+    }
+    .post-list table tr td{
+        border-bottom: 1px solid #ccc;
+    }
+    .post-list table tr td span{
+        color: blue;
+        padding-right: 10px;
+    }
+    .post-list table tr td p:last-child{
+        color: #999;
+    }
+    .post-page{
+        text-align: right;
+        margin-bottom: 3px;
+    }
 </style>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+    <div id="postDetail">
+        <div class="send-pad">
+            <el-button type="primary" size="small">回帖</el-button>
+        </div>
+        <div class="reply-list">
+
+        </div>
+        <div class="reply-page">
+            <el-pagination background layout="prev, pager, next":page-size=30 :total="1000">
+            </el-pagination>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el:"#postDetail"
+        })
+    </script>
+    <style>
+        .send-pad{
+            height: 50px;
+            margin-top: 36px;
+        }
+        .reply-page{
+            text-align: right;
+        }
+    </style>
+</body>
+</html>
